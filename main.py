@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from llm_model.model import load_model, get_sentiment_score
+from llm_model.model import load_model, scorer
 import os
 app = Flask(__name__)
 
