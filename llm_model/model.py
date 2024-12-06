@@ -11,6 +11,7 @@ def load_model():
     model_name = 'meta-llama/Llama-3.1-8B'
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
+        load_in_4bit=True,
         trust_remote_code=True,
         device_map='cuda'
     )
