@@ -1,13 +1,14 @@
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from transformers import AutoModel, AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
+from huggingface_hub import login
 import torch
 import os
 
 def load_model():
     base_model = "meta-llama/Llama-3.1-8B"
     peft_model = "llk010502/llama3.1-8B-financial_sentiment"
-    
+    login('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')
     model_name = 'meta-llama/Llama-3.1-8B'
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
