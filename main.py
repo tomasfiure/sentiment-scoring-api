@@ -13,11 +13,11 @@ def analyze_sentiment():
     if "text" not in data:
         return jsonify({"error": "Text not provided"}), 400
 
-    text = data["text"]
+    text = [data["text"]]
 
     try:
         # Get the sentiment score using your pre-written function
-        score = get_sentiment_score(model, text)
+        score = scorer(model, text)
         return jsonify({"text": text, "sentiment_score": score})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
